@@ -26,7 +26,7 @@ class EnvLoader {
           return `${this.envpath}/.env.production`;
         default:
           console.log(`Server Using: development ENV`)
-          return `${this.envpath}/.env.development`;
+          return `${this.envpath}/.env`;
       }
     }
   }
