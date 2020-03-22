@@ -21,9 +21,6 @@ class EnvLoader {
         case 'development':
           console.log(`Server Using: development ENV`);
           return `${this.envpath}/.env.development`;
-        case 'production':
-          console.log(`Server Using: production ENV`);
-          return `${this.envpath}/.env.production`;
         default:
           console.log(`Server Using: default ENV`)
           return `${this.envpath}/.env`;
