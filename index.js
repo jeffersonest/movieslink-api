@@ -3,5 +3,5 @@ const Envloader = require('./src/utils/envLoader');
 
 const loadEnvironments = new Envloader(`${__dirname}/`);
 
-const server = new Server(process.env.SERVER_PORT || 3000);
+const server = new Server(process.env.PORT || 3000);
 
