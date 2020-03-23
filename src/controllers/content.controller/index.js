@@ -11,10 +11,9 @@ class ContentController {
           language: process.env.API_LANGUAGE,
           page: 1,
           include_adult: false,
-          query: year
         }
       };
-      let { data } = await api.get("search/multi", query);
+      let { data } = await api.get("movie/popular", query);
 
       let movies = this.getPagination(data);
 
