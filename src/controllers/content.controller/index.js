@@ -13,6 +13,7 @@ class ContentController {
           include_adult: false,
         }
       };
+
       let { data } = await api.get("movie/popular", query);
 
       let movies = this.getPagination(data);
@@ -26,7 +27,7 @@ class ContentController {
 
   async search(req, res, next) {
     try {
-      let { page, content_name } = req.query;
+      let { page, content_name='' } = req.query;
       let query = {
         params: {
           api_key: process.env.API_KEY,
