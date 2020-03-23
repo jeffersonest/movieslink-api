@@ -16,6 +16,7 @@ class Server {
     }
 
     initializeMiddlewares() {
+        this.server.use(this.cors());
         this.server.use(this.bodyParser.urlencoded({ extended: false }));
     }
 
