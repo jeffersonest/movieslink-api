@@ -3,13 +3,13 @@ const api = require("../../services/api");
 class ContentController {
 
   async index(req, res, next) {
+    const {page} = req.query;
     try {
-      let year = new Date().getFullYear();
       let query = {
         params: {
           api_key: process.env.API_KEY,
           language: process.env.API_LANGUAGE,
-          page: 1,
+          page,
           include_adult: false,
         }
       };
