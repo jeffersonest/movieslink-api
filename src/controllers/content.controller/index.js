@@ -20,7 +20,6 @@ class ContentController {
 
       return res.status(200).json(movies);
     } catch (error) {
-      console.log(error);
       return res.status(500).json({ error: error.message });
     }
   }
@@ -48,10 +47,11 @@ class ContentController {
     }
   }
 
-  getGenreName(genre_id, genre_list = Array) {
+  getGenreName(genre_id, genre_list) {
       var genre_name = '';
-
-      for(let index=0; index <= genre_list.length; index++){
+      console.log('GENRE LIST',genre_list);
+      for(let index=0; index <= genre_list.length - 1; index++){
+        console.log(genre_list[index]);
         if(genre_list[index].id == genre_id){  
           genre_name =genre_list[index].name;
           break;
@@ -80,6 +80,7 @@ class ContentController {
 
       return res.status(200).send(genre_names.join(' / '));
     } catch (error) {
+      console.log(error)
       return res.status(500).json({ error: error });
     }
   }
