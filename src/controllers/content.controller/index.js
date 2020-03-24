@@ -1,5 +1,4 @@
 const api = require("../../services/api");
-const _ = require('lodash');
 class ContentController {
 
   async index(req, res, next) {
