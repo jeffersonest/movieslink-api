@@ -6,6 +6,8 @@ class Server {
         this.server = require('express')();
         this.cors = require('cors');
         this.routes = require('./routes');
+        this.helmet = require('helmet');
+
 
         this.PORT = port;
 
@@ -16,6 +18,7 @@ class Server {
     }
 
     initializeMiddlewares() {
+        this.server.use(this.helmet());
         this.server.use(this.cors());
         this.server.use(this.bodyParser.urlencoded({ extended: false }));
     }
