@@ -14,7 +14,7 @@ class ContentController {
         }
       };
 
-      let { data } = await api.get("movie/popular", query);
+      let { data } = await api.get("movie/upcoming", query);
 
       let movies = this.getPagination(data);
 
