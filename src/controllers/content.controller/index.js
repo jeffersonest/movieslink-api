@@ -33,7 +33,8 @@ class ContentController {
           language: process.env.API_LANGUAGE,
           page,
           include_adult: false,
-          query: content_name
+          query: content_name,
+          include_adult: false,
         }
       };
 
@@ -49,9 +50,7 @@ class ContentController {
 
   getGenreName(genre_id, genre_list) {
       var genre_name = '';
-      console.log('GENRE LIST',genre_list);
       for(let index=0; index <= genre_list.length - 1; index++){
-        console.log(genre_list[index]);
         if(genre_list[index].id == genre_id){  
           genre_name =genre_list[index].name;
           break;
@@ -80,7 +79,6 @@ class ContentController {
 
       return res.status(200).send(genre_names.join(' / '));
     } catch (error) {
-      console.log(error)
       return res.status(500).json({ error: error });
     }
   }
@@ -100,7 +98,7 @@ class ContentController {
       return newMovies;
 
     } catch (error) {
-      console.log(error);
+      return error;
     }
   }
 }
